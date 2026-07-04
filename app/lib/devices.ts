@@ -1,24 +1,29 @@
 export type Device = {
-    id: string;
-    room: "drawing" | "workroom_1" | "workroom_2";
-    type: "fan" | "light";
-    name: string;
-    powerRating: number;
-    wattage: number;
-    isOn: boolean;
-    lastChanged: number;
-}
-
-export const devices : Device[] = [
+  id: string;
+  room: "drawing" | "workroom_1" | "workroom_2";
+  type: "fan" | "light";
+  name: string;
+  powerRating: number;
+  wattage: number;
+  isOn: boolean;
+  lastChanged: number;
+  alertSent: boolean;
+  manualOverride: boolean;
+  overrideUntil: null;
+};
+export const devices: Device[] = [
   {
     id: "drawing-fan-1",
     room: "drawing",
     type: "fan",
     name: "Fan 1",
     powerRating: 60,
-    wattage: 60,
+    wattage: 60, // current draw (60 when ON, 0 when OFF)
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "drawing-fan-2",
@@ -29,6 +34,9 @@ export const devices : Device[] = [
     wattage: 60,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "drawing-light-1",
@@ -39,6 +47,9 @@ export const devices : Device[] = [
     wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "drawing-light-2",
@@ -49,6 +60,9 @@ export const devices : Device[] = [
     wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "drawing-light-3",
@@ -59,36 +73,48 @@ export const devices : Device[] = [
     wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-1-fan-1",
     room: "workroom_1",
     type: "fan",
     name: "Fan 1",
-    wattage: 60,
     powerRating: 60,
+    wattage: 60,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-1-fan-2",
     room: "workroom_1",
     type: "fan",
     name: "Fan 2",
-    wattage: 60,
     powerRating: 60,
+    wattage: 60,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-1-light-1",
     room: "workroom_1",
     type: "light",
     name: "Light 1",
-    wattage: 15,
     powerRating: 15,
+    wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-1-light-2",
@@ -99,65 +125,86 @@ export const devices : Device[] = [
     wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-1-light-3",
     room: "workroom_1",
     type: "light",
     name: "Light 3",
-    wattage: 15,
     powerRating: 15,
+    wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-2-fan-1",
     room: "workroom_2",
     type: "fan",
     name: "Fan 1",
-    wattage: 60,
     powerRating: 60,
+    wattage: 60,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-2-fan-2",
     room: "workroom_2",
     type: "fan",
     name: "Fan 2",
-    wattage: 60,
     powerRating: 60,
+    wattage: 60,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-2-light-1",
     room: "workroom_2",
     type: "light",
     name: "Light 1",
-    wattage: 15,
     powerRating: 15,
+    wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-2-light-2",
     room: "workroom_2",
     type: "light",
     name: "Light 2",
-    wattage: 15,
     powerRating: 15,
+    wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
   {
     id: "workroom-2-light-3",
     room: "workroom_2",
     type: "light",
     name: "Light 3",
-    wattage: 15,
     powerRating: 15,
+    wattage: 15,
     isOn: true,
     lastChanged: Date.now(),
+    alertSent: false,
+    manualOverride: false,
+    overrideUntil: null,
   },
 ];
